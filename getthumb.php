@@ -20,11 +20,7 @@ $fromfile = $_GET['fromfile'];
 $auction_id = $_GET['auction_id'];
 
 // check passed values
-if (!isset($_GET['fromfile']) ||
-	!isset($_GET['auction_id']) || !is_numeric($auction_id)) {
-    ErrorPNG($ERR_716);
-    exit;
-} elseif (!file_exists($_GET['fromfile']) && !fopen($_GET['fromfile'], 'r')) {
+if (!isset($_GET['fromfile']) || !isset($_GET['auction_id']) || !is_numeric($auction_id)) {
     ErrorPNG($ERR_716);
     exit;
 }
@@ -37,6 +33,11 @@ if ($fromfile != '') {
 } else {
 	// if empty filename just show default image
 	$file_path = MAIN_PATH . 'images/email_alerts/default_item_img.jpg';
+}
+
+if (!file_exists($file_path) && !fopen($file_path, 'r')) {
+  ErrorPNG($ERR_716);
+  exit;
 }
 
 $nomanage = false;
