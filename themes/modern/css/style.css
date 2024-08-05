@@ -160,6 +160,7 @@
 	display: block;
 	margin-left: auto;
 	margin-right: auto;
+	object-fit: contain;
 }
 
 .block-title {
@@ -208,6 +209,7 @@
 }
 img.search-res {
 	width: 180px;
+	object-fit: contain;
 }
 
 .copyright {
