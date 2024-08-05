@@ -212,7 +212,7 @@ if ($PAGES > 1) {
     $COUNTER = $LOW;
     while ($COUNTER <= $PAGES && $COUNTER < ($PAGE + 6)) {
         $template->assign_block_vars('pages', array(
-                'PAGE' => ($PAGE == $COUNTER) ? '<b>' . $COUNTER . '</b>' : '<a href="' . $system->SETTINGS['siteurl'] . 'yourauctions_sold.php?PAGE=' . $COUNTER . '&id=' . $id . '"><u>' . $COUNTER . '</u></a>'
+                'PAGE' => ($PAGE == $COUNTER) ? '<a><b>' . $COUNTER . '</b></a>' : '<a href="' . $system->SETTINGS['siteurl'] . 'yourauctions_sold.php?PAGE=' . $COUNTER . '&id=' . $id . '"><u>' . $COUNTER . '</u></a>'
                 ));
         $COUNTER++;
     }
