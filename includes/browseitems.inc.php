@@ -92,7 +92,7 @@ function browseItems($query, $params, $query_feat, $params_feat, $total, $curren
         $COUNTER = $LOW;
         while ($COUNTER <= $PAGES && $COUNTER < ($PAGE+6)) {
             $template->assign_block_vars('pages', array(
-                'PAGE' => ($PAGE == $COUNTER) ? '<b>' . $COUNTER . '</b>' : '<a href="' . $system->SETTINGS['siteurl'] . $current_page . '?PAGE=' . $COUNTER . $extravar . '"><u>' . $COUNTER . '</u></a>'
+                'PAGE' => ($PAGE == $COUNTER) ? '<a><b>' . $COUNTER . '</b></a>' : '<a href="' . $system->SETTINGS['siteurl'] . $current_page . '?PAGE=' . $COUNTER . $extravar . '"><u>' . $COUNTER . '</u></a>'
             ));
             $COUNTER++;
         }
