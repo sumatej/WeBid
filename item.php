@@ -289,6 +289,8 @@ if ($user->logged_in && $num_bids > 0) {
         if (in_array($user->user_data['id'], $hbidder_data)) {
             $yourbidmsg = $MSG['25_0088'];
             $yourbidclass = 'yourbidwin';
+            $current_time = new DateTime('now', $dt->UTCtimezone);
+            $end_time = new DateTime($ends, $dt->UTCtimezone);
 	    $difference = $current_time->diff($end_time);
             if ($difference->invert && $auction_data['reserve_price'] > 0 && $auction_data['current_bid'] < $auction_data['reserve_price']) {
                 $yourbidmsg = $MSG['514'];
