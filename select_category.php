@@ -163,7 +163,7 @@ for ($i = 0; $i < $boxes; $i++) {
     $template->assign_block_vars('boxes', array(
             'B_NOWLINE' => (($i % 2 == 0) && ($i > 0)),
             'I' => $i,
-            'PERCENT' => ($boxes == 1) ? 100 : ($boxes == 2) ? 50 : 33
+            'PERCENT' => ($boxes == 1) ? 100 : (($boxes == 2) ? 50 : 33)
             ));
     foreach ($boxarray[$i] as $k => $v) {
         $template->assign_block_vars('boxes.cats', array(

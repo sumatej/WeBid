@@ -32,6 +32,7 @@ $emailer->assign_vars(array(
 
         'C_NAME' => $user->user_data['name']
         ));
+
 $emailer->email_uid = $user->user_data['id'];
 $subject = $system->SETTINGS['sitename'] . ' ' . $MSG['099'] . ': ' . $title . ' (' . $auction_id . ')';
 $emailer->email_sender($user->user_data['email'], 'auctionmail.inc.php', $subject);

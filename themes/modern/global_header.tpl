@@ -37,7 +37,10 @@
 <body>
 <div class="container">
 	<div class="row header">
-		<div class="col-md-6"><img src="{SITEURL}uploaded/logo/{LOGO}" border="0" alt="{SITENAME}"></div>
+		<div class="col-md-6">
+      <img src="{SITEURL}uploaded/logo/{LOGO}" border="0" alt="{SITENAME}">
+      <a href="dashboard.php"><div style="background-color: #00ff00; display: inline-block; position: relative; text-align: center; padding: 5px; width: 150px; height:35px; left: 100px; font-size: 1.3em"><strong>MY BIDS</strong></div></a>
+    </div>
 		<div class="col-md-6 hidden-xs text-right">{BANNER}</div>
 	</div>
 	<div class="row">

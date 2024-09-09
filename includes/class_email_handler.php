@@ -67,7 +67,7 @@ class email_handler
             }
             $i++;
         }
-        $this->message = implode($skipped_buffer, '');
+        $this->message = implode('', $skipped_buffer);
         $this->message = str_replace("'", "\'", $this->message);
 
         $this->message = preg_replace('#\{([a-z0-9\-_]*?)\}#is', "' . ((isset(\$this->vars['\\1'])) ? \$this->vars['\\1'] : '') . '", $this->message);

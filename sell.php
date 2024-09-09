@@ -146,6 +146,7 @@ switch ($_SESSION['action']) {
 
             $addcounter = true;
 
+
             // work out & add fee
             if ($system->SETTINGS['fees'] == 'y' && !$user->permissions['no_fees']) {
                 $feeupdate = false;
@@ -244,10 +245,12 @@ switch ($_SESSION['action']) {
 
             if (!isset($_SESSION['SELL_action']) || empty($_SESSION['SELL_action'])) {
                 if (!$requires_premoderation) {
+                    // TODO!!!
                     alert_auction_watchers($auction_id, $_SESSION['SELL_title'], $_SESSION['SELL_description']);
                 }
 
                 if ($user->user_data['startemailmode'] == 'yes' && $addcounter) {
+                  // TU SME
                     if (!$requires_premoderation) {
                         include INCLUDE_PATH . 'email/auction_confirmation.php';
                     } else {

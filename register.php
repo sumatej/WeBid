@@ -25,6 +25,7 @@ if ($system->SETTINGS['spam_register'] == 2) {
 
 function CheckAge($day, $month, $year) // check if the users > 18
 {
+    return 1;
     $NOW_year = date('Y');
     $NOW_month = date('m');
     $NOW_day = date('d');
@@ -254,7 +255,7 @@ if (isset($_POST['action']) && $_POST['action'] == 'first') {
                 $phpass = new PasswordHash(8, false);
                 $query = "INSERT INTO " . $DBPrefix . "users
                           (nick, password, hash, name, address, city, prov, country, zip, phone, nletter, email, birthdate,
-                          suspended, language, groups, balance, timezone)
+                          suspended, language, `groups`, balance, timezone)
                           VALUES
                           (:nick, :password, :hash, :name, :address, :city, :prov, :country, :zip, :phone, :nletter, :email, :birthdate,
                           :suspended, :language, :groups, :balance, :timezone)";
